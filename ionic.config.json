@@ -1,0 +1,7 @@
+{
+  "name": "myFilms",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
