@@ -1,20 +1,185 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+
+<ion-header [translucent]="true" class="film-header" style="background: #000000 !important;">
+  <ion-toolbar color="dark" style="--background: transparent !important; background: transparent !important;">
+    <div class="header-content">
+      <div class="logo">
+        <span class="logo-text" style="color: #ffffff !important;">LAWRENCE PRODUCTIONS</span>
+        <span class="logo-icon" style="color: #ff0000 !important; font-size: 1.8rem; margin-left: 0.5rem;">🎬</span>
+      </div>
+      <nav class="nav-menu">
+        <a href="#" class="nav-link" style="color: #ffffff !important;" (click)="navigateToSection('home'); $event.preventDefault()">HOME</a>
+        <a href="#" class="nav-link" style="color: #ffffff !important;" (click)="navigateToSection('about'); $event.preventDefault()">ABOUT</a>
+        <a href="#" class="nav-link" style="color: #ffffff !important;" (click)="navigateToSection('films'); $event.preventDefault()">FILMS</a>
+        <a href="#" class="nav-link" style="color: #ffffff !important;" (click)="navigateToSection('contact'); $event.preventDefault()">CONTACT</a>
+      </nav>
+    </div>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content #content [fullscreen]="true" class="film-content" style="--background: #000000 !important; background: #000000 !important; color: #ffffff !important;">
+  <!-- Hero Section -->
+  <section id="home" class="hero-section" style="background: #000000 !important;">
+    <div class="hero-background">
+      <img src="assets/images/image (2).jpg" alt="Film set background" class="hero-image" width="1920" height="1080" loading="eager">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-title" style="color: #ffffff !important;">SILENCE IS KEY</h1>
+      <p class="hero-subtitle" style="color: #ffffff !important;">A PSYCHOLOGICAL CRIME THRILLER</p>
+      <button class="hero-btn" style="background: #ff0000 !important; color: #ffffff !important;" (click)="openTrailer()">WATCH TRAILER</button>
+    </div>
+  </section>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <!-- About Section -->
+  <section id="about" class="about-section" style="background: #111111 !important;">
+    <div class="container">
+      <h2 class="section-title" style="color: #ffffff !important;">ABOUT THE FILM</h2>
+      <p class="about-text" style="color: #ffffff !important;">
+        A detective investigating a brutal murder is drawn into a twisted game of manipulation with a mysterious suspect who never speaks a word. As he delves deeper, he realizes silence can be more dangerous than he ever imagined.
+      </p>
+      <div class="themes">
+        <span class="theme" style="color: #ffffff !important;">SILENCE.</span>
+        <span class="theme" style="color: #ffffff !important;">BETRAYAL.</span>
+        <span class="theme" style="color: #ffffff !important;">CONTROL.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Media Section -->
+  <section class="media-section" style="background: #000000 !important;">
+    <div class="container">
+      <div class="media-grid">
+        <div class="media-column">
+          <h3 class="media-title" style="color: #ffffff !important;">TRAILER</h3>
+          <div class="video-container">
+            <video src="assets/videos/video.mp4" poster="assets/images/image (1).jpg" controls class="trailer-video" width="800" height="450">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+        <div class="media-column">
+          <h3 class="media-title" style="color: #ffffff !important;">STILLS</h3>
+          <div class="stills-grid">
+            <div class="still-item">
+              <img src="assets/images/image (3).jpg" alt="Film still 1" class="still-image" width="400" height="300" loading="lazy">
+              <div class="still-overlay">
+                <span class="still-text" style="color: #ffffff !important;">DO YOU TRUST ME?</span>
+              </div>
+            </div>
+            <div class="still-item">
+              <img src="assets/images/image (4).jpg" alt="Film still 2" class="still-image" width="400" height="300" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cast & Crew Section -->
+  <section class="cast-section" style="background: #111111 !important;">
+    <div class="container">
+      <h2 class="section-title" style="color: #ffffff !important;">CAST & CREW</h2>
+      <div class="cast-grid">
+        <div class="cast-member">
+          <div class="cast-image">
+            <img src="assets/images/image (5).jpg" alt="Rebecca Lawson" class="cast-photo" width="250" height="250" loading="lazy">
+          </div>
+          <h3 class="cast-name" style="color: #ffffff !important;">Rebecca Lawson</h3>
+          <p class="cast-role" style="color: #ffffff !important;">Detective Arthurs</p>
+        </div>
+        <div class="cast-member">
+          <div class="cast-image">
+            <img src="assets/images/image (6).jpg" alt="David Miller" class="cast-photo" width="250" height="250" loading="lazy">
+          </div>
+          <h3 class="cast-name" style="color: #ffffff !important;">David Miller</h3>
+          <p class="cast-role" style="color: #ffffff !important;">The Suspect</p>
+        </div>
+        <div class="cast-member">
+          <div class="cast-image">
+            <img src="assets/images/image (7).jpg" alt="James Wilson" class="cast-photo" width="250" height="250" loading="lazy">
+          </div>
+          <h3 class="cast-name" style="color: #ffffff !important;">James Wilson</h3>
+          <p class="cast-role" style="color: #ffffff !important;">Supporting Actor</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Festivals & Press Section -->
+  <section class="press-section" style="background: #000000 !important;">
+    <div class="container">
+      <h2 class="section-title" style="color: #ffffff !important;">FESTIVALS & PRESS</h2>
+      <div class="press-quotes">
+        <blockquote class="press-quote" style="color: #ffffff !important;">
+          "Gripping and unnerving — a masterfully crafted thriller"
+        </blockquote>
+        <blockquote class="press-quote" style="color: #ffffff !important;">
+          "A tense, atmospheric journey into the darkness of the human mind"
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Film Showcase Section -->
+  <section id="films" class="films-section" style="background: #111111 !important;">
+    <div class="container">
+      <h2 class="section-title" style="color: #ffffff !important;">OUR FILMS</h2>
+      <div class="films-grid">
+        <div class="film-card" *ngFor="let film of films; let i = index" style="background: #000000 !important;">
+          <div class="film-poster">
+            <img [src]="film.poster" [alt]="film.title + ' poster'" class="poster-image" width="320" height="450" loading="lazy">
+            <div class="film-overlay">
+              <button class="play-btn" style="background: #ff0000 !important;" (click)="openFilmTrailer(film.trailer)">
+                <span style="font-size: 2.5rem; color: #ffffff;">▶</span>
+              </button>
+            </div>
+          </div>
+          <div class="film-info">
+            <h3 class="film-title" style="color: #ffffff !important;">{{ film.title }}</h3>
+            <p class="film-year" style="color: #ff0000 !important;">{{ film.year }}</p>
+            <p class="film-description" style="color: #ffffff !important;">{{ film.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section" style="background: #000000 !important;">
+    <div class="container">
+      <h2 class="section-title" style="color: #ffffff !important;">CONTACT</h2>
+      <div class="contact-content">
+        <p class="contact-text" style="color: #ffffff !important;">Get in touch for collaborations, screenings, or press inquiries.</p>
+        <div class="contact-info">
+          <div class="contact-item" style="color: #ffffff !important;">
+            <span style="color: #ff0000 !important; font-size: 1.8rem; margin-right: 1rem;">✉</span>
+            <span>info@lawrenceproductions.com</span>
+          </div>
+          <div class="contact-item" style="color: #ffffff !important;">
+            <span style="color: #ff0000 !important; font-size: 1.8rem; margin-right: 1rem;">📞</span>
+            <span>+1 (555) 123-4567</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </ion-content>
+
+<!-- Trailer Modal -->
+<ion-modal [isOpen]="isTrailerModalOpen" (didDismiss)="closeTrailer()" style="--background: rgba(0, 0, 0, 0.95);">
+  <ng-template>
+    <div class="trailer-modal">
+      <div class="modal-header">
+        <h2 style="color: #ffffff !important; margin: 0;">TRAILER</h2>
+        <button class="close-btn" (click)="closeTrailer()" style="background: #ff0000 !important; color: #ffffff !important; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; font-size: 1.2rem;">
+          ✕
+        </button>
+      </div>
+      <div class="modal-content">
+        <video [src]="currentVideo" controls autoplay style="width: 100%; max-width: 800px; height: auto;">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </ng-template>
+</ion-modal>

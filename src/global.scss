@@ -35,3 +35,169 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import '@ionic/angular/css/palettes/dark.system.css';
+
+/* Global CSS Variables for Film Website Theme */
+:root {
+  --primary-color: #000000;
+  --secondary-color: #111111;
+  --accent-color: #ff0000;
+  --accent-hover: #cc0000;
+  --text-color: #ffffff;
+  --text-muted: #ffffff;
+  --text-dim: #cccccc;
+  --overlay-color: rgba(0, 0, 0, 0.9);
+  --font-primary: 'Playfair Display', 'Georgia', serif;
+  --font-secondary: 'Inter', 'Arial', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+  --shadow-light: 0 4px 20px rgba(255, 0, 0, 0.1);
+  --shadow-medium: 0 8px 40px rgba(255, 0, 0, 0.2);
+  --shadow-heavy: 0 20px 80px rgba(255, 0, 0, 0.3);
+  --gradient-primary: linear-gradient(135deg, rgba(255, 0, 0, 0.1), rgba(0, 0, 0, 0.9));
+  --gradient-accent: linear-gradient(135deg, #ff0000, #cc0000);
+  --border-radius: 12px;
+  --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Using system fonts instead of Google Fonts to reduce bundle size */
+
+/* Global Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  font-family: var(--font-secondary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--primary-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-hover);
+}
+
+/* Ionic Component Overrides */
+ion-app {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+
+ion-content {
+  --background: var(--primary-color);
+  --color: var(--text-color);
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+
+ion-header {
+  --background: rgba(0, 0, 0, 0.95);
+  background: rgba(0, 0, 0, 0.95);
+}
+
+ion-toolbar {
+  --background: transparent;
+  --color: var(--text-color);
+  --border-style: none;
+  background: transparent;
+  color: var(--text-color);
+}
+
+ion-title {
+  --color: var(--text-color);
+  color: var(--text-color);
+}
+
+/* Override Ionic's default colors */
+ion-button {
+  --background: var(--accent-color);
+  --background-activated: var(--accent-hover);
+  --background-focused: var(--accent-hover);
+  --background-hover: var(--accent-hover);
+  --color: var(--text-color);
+  --border-color: var(--accent-color);
+}
+
+ion-card {
+  --background: var(--secondary-color);
+  --color: var(--text-color);
+  background: var(--secondary-color);
+  color: var(--text-color);
+}
+
+ion-card-header {
+  --background: var(--secondary-color);
+  --color: var(--text-color);
+  background: var(--secondary-color);
+  color: var(--text-color);
+}
+
+ion-card-title {
+  --color: var(--text-color);
+  color: var(--text-color);
+}
+
+ion-card-subtitle {
+  --color: var(--text-muted);
+  color: var(--text-muted);
+}
+
+ion-card-content {
+  --color: var(--text-color);
+  color: var(--text-color);
+}
+
+/* Ensure all text elements use our theme */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-color);
+  font-family: var(--font-primary);
+}
+
+p, span, div {
+  color: var(--text-color);
+}
+
+/* Override any Ionic default backgrounds */
+.ion-page {
+  background-color: var(--primary-color);
+}
+
+/* Ensure proper contrast for all elements */
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+/* Force dark theme */
+@media (prefers-color-scheme: light) {
+  :root {
+    --primary-color: #000000;
+    --secondary-color: #111111;
+    --accent-color: #ff0000;
+    --accent-hover: #cc0000;
+    --text-color: #ffffff;
+    --text-muted: #ffffff;
+    --text-dim: #cccccc;
+  }
+}
