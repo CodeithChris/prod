@@ -24,28 +24,28 @@ export class HomePage {
     {
       title: 'Silence is Key',
       year: 2024,
-      poster: 'assets/images/image (8).jpg',
+      poster: 'assets/images/image-8.jpg',
       description: 'A psychological crime thriller about a detective drawn into a twisted game of manipulation.',
       trailer: 'assets/videos/video.mp4'
     },
     {
       title: 'The Dark Path',
       year: 2023,
-      poster: 'assets/images/image (9).jpg',
+      poster: 'assets/images/image-9.jpg',
       description: 'A suspenseful journey through the shadows of human nature and redemption.',
       trailer: 'assets/videos/video.mp4'
     },
     {
       title: 'Echo Chamber',
       year: 2023,
-      poster: 'assets/images/image (10).jpg',
+      poster: 'assets/images/image-10.jpg',
       description: 'A mind-bending thriller that explores the boundaries of reality and perception.',
       trailer: 'assets/videos/video.mp4'
     },
     {
       title: 'Whispers in the Night',
       year: 2024,
-      poster: 'assets/images/image (11).jpg',
+      poster: 'assets/images/image-11.jpg',
       description: 'A haunting tale of secrets that refuse to stay buried in the darkness.',
       trailer: 'assets/videos/video.mp4'
     }
