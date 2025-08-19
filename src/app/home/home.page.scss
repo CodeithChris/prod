@@ -32,9 +32,7 @@ ion-header {
   top: 0;
   width: 100%;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  background: transparent;
   transition: var(--transition-smooth);
   
   ion-toolbar {
@@ -64,7 +62,7 @@ ion-header {
   font-family: var(--font-primary);
   font-size: 0.9rem;
   font-weight: 500;
-  color: var(--text-color);
+  color: #ffffff;
   letter-spacing: 1px;
   text-transform: uppercase;
   transition: var(--transition-smooth);
@@ -79,7 +77,7 @@ ion-header {
     font-family: var(--font-primary);
     font-size: 1.2rem;
     font-weight: 600;
-    color: var(--text-color);
+    color: #ffffff;
     letter-spacing: 1px;
     text-transform: uppercase;
   }
@@ -158,11 +156,11 @@ ion-header {
 
 // Content styles
 .film-content {
-  --background: var(--secondary-color);
-  color: var(--text-color);
+  --background: var(--primary-color);
+  color: #ffffff;
   font-family: var(--font-primary);
   line-height: 1.6;
-  background: var(--secondary-color);
+  background: var(--primary-color);
 }
 
 // Hero Section
@@ -172,7 +170,7 @@ ion-header {
   align-items: center;
   justify-content: center;
   padding: 8rem 3rem 4rem;
-  background: var(--secondary-color);
+  background: var(--primary-color);
 }
 
 .hero-content {
@@ -185,7 +183,7 @@ ion-header {
   font-size: 4rem;
   font-weight: 700;
   margin-bottom: 2rem;
-  color: var(--text-color);
+  color: #ffffff;
   letter-spacing: 3px;
   text-transform: uppercase;
   line-height: 1.2;
@@ -195,7 +193,7 @@ ion-header {
   font-family: var(--font-secondary);
   font-size: 1.2rem;
   line-height: 1.8;
-  color: var(--text-light);
+  color: #ffffff;
   font-weight: 300;
   max-width: 600px;
   margin: 0 auto;
