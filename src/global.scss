@@ -76,22 +76,22 @@ html, body {
   overflow-x: hidden;
 }
 
-/* Custom Scrollbar Styling */
+/* Hide Scrollbars Globally */
 ::-webkit-scrollbar {
-  width: 8px;
+  display: none !important;
 }
 
-::-webkit-scrollbar-track {
-  background: var(--primary-color);
+* {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
 }
 
-::-webkit-scrollbar-thumb {
-  background: var(--accent-color);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-hover);
+/* Hide scrollbars for all elements */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+ion-content::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  display: none !important;
 }
 
 /* Ionic Component Overrides */
@@ -105,6 +105,14 @@ ion-content {
   --color: var(--text-color);
   background-color: var(--primary-color);
   color: var(--text-color);
+  
+  /* Ensure scrolling works while hiding scrollbar */
+  &::-webkit-scrollbar {
+    display: none !important;
+  }
+  
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
 }
 
 ion-header {
