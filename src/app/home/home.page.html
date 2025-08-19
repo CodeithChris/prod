@@ -45,7 +45,7 @@
     <div class="films-grid">
       <div class="film-item" *ngFor="let film of films; let i = index" (click)="openFilmTrailer(film.trailer)">
         <div class="film-image">
-          <img [src]="film.poster" [alt]="film.title + ' poster']" class="film-poster">
+          <img [src]="film.poster" [alt]="film.title + ' poster'" class="film-poster">
           <div class="film-overlay">
             <div class="film-info">
               <h3 class="film-title">{{ film.title }}</h3>
