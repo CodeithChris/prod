@@ -5,6 +5,21 @@
   box-sizing: border-box;
 }
 
+// Hide scrollbar for webkit browsers
+::-webkit-scrollbar {
+  display: none;
+}
+
+// Hide scrollbar for Firefox
+* {
+  scrollbar-width: none;
+}
+
+// Hide scrollbar for IE/Edge
+* {
+  -ms-overflow-style: none;
+}
+
 ion-header {
   display: block !important;
   visibility: visible !important;
