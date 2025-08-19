@@ -32,8 +32,6 @@ html, body, div, section, ion-content, .film-content {
 
 // Specific scrollbar hiding for ion-content
 ion-content {
-  --overflow: hidden;
-  
   &::-webkit-scrollbar {
     display: none;
   }
