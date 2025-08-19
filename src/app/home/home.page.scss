@@ -5,63 +5,33 @@
   box-sizing: border-box;
 }
 
-// Global scrollbar hiding
-html, body, div, section, ion-content, .film-content {
-  scrollbar-width: none !important;
-  -ms-overflow-style: none !important;
-}
-
-html::-webkit-scrollbar,
-body::-webkit-scrollbar,
-div::-webkit-scrollbar,
-section::-webkit-scrollbar,
-ion-content::-webkit-scrollbar,
-.film-content::-webkit-scrollbar {
+// Global scrollbar hiding - Simplified and consistent with global.scss
+::-webkit-scrollbar,
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-corner {
   display: none !important;
+  width: 0 !important;
+  height: 0 !important;
 }
 
-// Hide scrollbar for webkit browsers
-::-webkit-scrollbar {
-  display: none !important;
-}
-
-// Hide scrollbar for Firefox
 * {
   scrollbar-width: none !important;
-}
-
-// Hide scrollbar for IE/Edge
-* {
   -ms-overflow-style: none !important;
 }
 
-// Specific scrollbar hiding for ion-content
-ion-content {
-  &::-webkit-scrollbar {
-    display: none !important;
-  }
-  
+// Target Ionic's internal scroll containers
+ion-content .scroll-y,
+ion-content .scroll-x,
+.scroll-y,
+.scroll-x {
   scrollbar-width: none !important;
   -ms-overflow-style: none !important;
-}
-
-// Target the scrollable container inside ion-content
-ion-content .scroll-y {
+  
   &::-webkit-scrollbar {
     display: none !important;
-  }
-  
-  scrollbar-width: none !important;
-  -ms-overflow-style: none !important;
-}
-
-// Hide scrollbar on body and html
-html, body {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  
-  &::-webkit-scrollbar {
-    display: none;
+    width: 0 !important;
+    height: 0 !important;
   }
 }
 
