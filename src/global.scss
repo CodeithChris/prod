@@ -76,46 +76,69 @@ html, body {
   overflow-x: hidden;
 }
 
-/* Hide Scrollbars Globally - More Aggressive Approach */
+/* NUCLEAR OPTION - HIDE ALL SCROLLBARS FOREVER */
 ::-webkit-scrollbar,
 ::-webkit-scrollbar-track,
 ::-webkit-scrollbar-thumb,
-::-webkit-scrollbar-corner {
+::-webkit-scrollbar-corner,
+::-webkit-scrollbar-button,
+::-webkit-scrollbar-track-piece {
   display: none !important;
   width: 0 !important;
   height: 0 !important;
+  background: transparent !important;
+  border: none !important;
 }
 
-* {
-  scrollbar-width: none !important;
-  -ms-overflow-style: none !important;
-}
-
-/* Hide scrollbars for all elements */
-html::-webkit-scrollbar,
-body::-webkit-scrollbar,
-ion-content::-webkit-scrollbar,
-*::-webkit-scrollbar,
-.scroll-y::-webkit-scrollbar,
-.scroll-x::-webkit-scrollbar {
-  display: none !important;
-  width: 0 !important;
-  height: 0 !important;
-}
-
-/* Target Ionic's internal scroll containers */
+/* Hide scrollbars for EVERYTHING */
+*,
+html,
+body,
+ion-content,
+ion-app,
+.ion-page,
+.scroll-y,
+.scroll-x,
 ion-content .scroll-y,
 ion-content .scroll-x,
-.scroll-y,
-.scroll-x {
+ion-content .inner-scroll,
+ion-content .scroll-content,
+ion-content .fixed-content {
   scrollbar-width: none !important;
   -ms-overflow-style: none !important;
   
-  &::-webkit-scrollbar {
+  &::-webkit-scrollbar,
+  &::-webkit-scrollbar-track,
+  &::-webkit-scrollbar-thumb,
+  &::-webkit-scrollbar-corner,
+  &::-webkit-scrollbar-button,
+  &::-webkit-scrollbar-track-piece {
     display: none !important;
     width: 0 !important;
     height: 0 !important;
+    background: transparent !important;
+    border: none !important;
   }
+}
+
+/* Force hide on all possible scroll containers */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+ion-content::-webkit-scrollbar,
+ion-app::-webkit-scrollbar,
+.ion-page::-webkit-scrollbar,
+.scroll-y::-webkit-scrollbar,
+.scroll-x::-webkit-scrollbar,
+ion-content .scroll-y::-webkit-scrollbar,
+ion-content .scroll-x::-webkit-scrollbar,
+ion-content .inner-scroll::-webkit-scrollbar,
+ion-content .scroll-content::-webkit-scrollbar,
+ion-content .fixed-content::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+  border: none !important;
 }
 
 /* Ionic Component Overrides */
@@ -235,5 +258,37 @@ a:hover {
     --text-color: #ffffff;
     --text-muted: #ffffff;
     --text-dim: #cccccc;
+  }
+}
+
+/* FINAL NUCLEAR OPTION - INJECT STYLES INTO HEAD */
+@supports (-webkit-appearance: none) {
+  /* Webkit browsers only */
+  ::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
+    display: none !important;
+    background: transparent !important;
+  }
+  
+  ::-webkit-scrollbar-track {
+    width: 0 !important;
+    height: 0 !important;
+    display: none !important;
+    background: transparent !important;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    width: 0 !important;
+    height: 0 !important;
+    display: none !important;
+    background: transparent !important;
+  }
+  
+  ::-webkit-scrollbar-corner {
+    width: 0 !important;
+    height: 0 !important;
+    display: none !important;
+    background: transparent !important;
   }
 }
