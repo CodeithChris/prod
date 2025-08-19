@@ -2,18 +2,31 @@
 <ion-header [translucent]="true" class="film-header">
   <ion-toolbar>
     <div class="header-content">
+      <div class="menu-toggle" (click)="toggleMenu()">
+        <span>MENU</span>
+      </div>
       <div class="logo">
         <span class="logo-text">VICUÑA PRODUCTIONS</span>
       </div>
-      <nav class="nav-menu">
-        <a href="#" class="nav-link" (click)="navigateToSection('home'); $event.preventDefault()">HOME</a>
-        <a href="#" class="nav-link" (click)="navigateToSection('about'); $event.preventDefault()">ABOUT</a>
-        <a href="#" class="nav-link" (click)="navigateToSection('films'); $event.preventDefault()">FILMS</a>
-        <a href="#" class="nav-link" (click)="navigateToSection('contact'); $event.preventDefault()">CONTACT</a>
-      </nav>
     </div>
   </ion-toolbar>
 </ion-header>
+
+<!-- Full Screen Menu -->
+<div class="full-menu" [class.active]="isMenuOpen">
+  <div class="menu-content">
+    <div class="menu-header">
+      <div class="menu-close" (click)="closeMenu()">
+        <span>BACK</span>
+      </div>
+    </div>
+    <nav class="menu-nav">
+      <a href="#" class="menu-link" (click)="navigateToSection('home'); closeMenu(); $event.preventDefault()">PORTFOLIO</a>
+      <a href="#" class="menu-link" (click)="navigateToSection('about'); closeMenu(); $event.preventDefault()">ABOUT</a>
+      <a href="#" class="menu-link" (click)="navigateToSection('contact'); closeMenu(); $event.preventDefault()">CONTACT</a>
+    </nav>
+  </div>
+</div>
 
 <ion-content #content [fullscreen]="true" class="film-content">
   <!-- Hero Section -->
@@ -21,79 +34,74 @@
     <div class="hero-content">
       <h1 class="hero-title">VICUÑA PRODUCTIONS</h1>
       <p class="hero-subtitle">
-        Vicuña Productions is the creative studio of Lawrence Productions, 
-        a film director & producer based in Los Angeles. Our work explores 
-        psychological thrillers through atmospheric storytelling that moves 
-        between suspense, mystery and mindful moments. Merging cinematography, 
-        sound design, and narrative, we offer unique visual stories across 
-        feature films, commercials, and digital content.
+        A creative studio exploring psychological thrillers through atmospheric storytelling, 
+        merging cinematography, sound design, and narrative to create unique visual experiences.
       </p>
     </div>
   </section>
 
-  <!-- About Section -->
-  <section id="about" class="about-section">
-    <div class="container">
-      <div class="about-content">
-        <h2 class="section-title">ABOUT THE FILM</h2>
-        <p class="about-text">
-          A detective investigating a brutal murder is drawn into a twisted game of manipulation with a mysterious suspect who never speaks a word. As he delves deeper, he realizes silence can be more dangerous than he ever imagined.
-        </p>
-        <div class="themes">
-          <span class="theme">SILENCE.</span>
-          <span class="theme">BETRAYAL.</span>
-          <span class="theme">CONTROL.</span>
+  <!-- Films Portfolio Section -->
+  <section id="films" class="films-section">
+    <div class="films-grid">
+      <div class="film-item" *ngFor="let film of films; let i = index" (click)="openFilmTrailer(film.trailer)">
+        <div class="film-image">
+          <img [src]="film.poster" [alt]="film.title + ' poster']" class="film-poster">
+          <div class="film-overlay">
+            <div class="film-info">
+              <h3 class="film-title">{{ film.title }}</h3>
+              <p class="film-year">{{ film.year }}</p>
+              <span class="view-project">VIEW PROJECT</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Films Section -->
-  <section id="films" class="films-section">
-    <div class="container">
-      <h2 class="section-title">FILMS</h2>
-      <div class="films-grid">
-        <div class="film-card" *ngFor="let film of films; let i = index">
-          <div class="film-poster">
-            <img [src]="film.poster" [alt]="film.title + ' poster'" class="poster-image">
-            <div class="film-overlay">
-              <button class="play-btn" (click)="openFilmTrailer(film.trailer)">
-                <span>▶</span>
-              </button>
-            </div>
-          </div>
-          <div class="film-info">
-            <h3 class="film-title">{{ film.title }}</h3>
-            <p class="film-year">{{ film.year }}</p>
-            <p class="film-description">{{ film.description }}</p>
-          </div>
-        </div>
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <div class="about-content">
+      <h2 class="section-title">ABOUT</h2>
+      <div class="about-text">
+        <p>
+          Vicuña Productions is the creative studio of Lawrence Productions, 
+          a film director & producer based in Los Angeles. Our work explores 
+          psychological thrillers through atmospheric storytelling that moves 
+          between suspense, mystery and mindful moments.
+        </p>
+        <p>
+          Merging cinematography, sound design, and narrative, we offer unique 
+          visual stories across feature films, commercials, and digital content.
+        </p>
+      </div>
+      <div class="themes">
+        <span class="theme">SILENCE</span>
+        <span class="theme">BETRAYAL</span>
+        <span class="theme">CONTROL</span>
       </div>
     </div>
   </section>
 
   <!-- Contact Section -->
   <section id="contact" class="contact-section">
-    <div class="container">
-      <div class="contact-content">
-        <h2 class="section-title">CONTACT</h2>
-        <div class="contact-info">
-          <div class="contact-email">
-            <a href="mailto:info@vicunaproductions.com">INFO@VICUÑAPRODUCTIONS.COM ↗</a>
-          </div>
-          <div class="contact-details">
-            <p>Get in touch for collaborations, screenings, or press inquiries.</p>
-          </div>
+    <div class="contact-content">
+      <h2 class="section-title">CONTACT</h2>
+      <div class="contact-info">
+        <div class="contact-email">
+          <a href="mailto:info@vicunaproductions.com">INFO@VICUÑAPRODUCTIONS.COM</a>
         </div>
-        
-        <div class="clients-section">
-          <h3 class="clients-title">SELECTED CLIENTS</h3>
-          <p class="clients-list">
-            Warner Bros, Netflix, Amazon Studios, 
-            Sundance Film Festival, Cannes Film Festival, 
-            Independent Spirit Awards
-          </p>
+        <div class="contact-details">
+          <p>Get in touch for collaborations, screenings, or press inquiries.</p>
         </div>
+      </div>
+      
+      <div class="clients-section">
+        <h3 class="clients-title">SELECTED CLIENTS</h3>
+        <p class="clients-list">
+          Warner Bros, Netflix, Amazon Studios, 
+          Sundance Film Festival, Cannes Film Festival, 
+          Independent Spirit Awards
+        </p>
       </div>
     </div>
   </section>

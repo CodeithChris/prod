@@ -18,6 +18,7 @@ export class HomePage {
   @ViewChild(IonContent) content!: IonContent;
   
   isTrailerModalOpen = false;
+  isMenuOpen = false;
   currentVideo = 'assets/videos/video.mp4';
 
   films = [
@@ -52,6 +53,22 @@ export class HomePage {
   ];
 
   constructor() {}
+
+  // Menu methods
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+    // Prevent body scroll when menu is open
+    if (this.isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  }
+
+  closeMenu() {
+    this.isMenuOpen = false;
+    document.body.style.overflow = '';
+  }
 
   // Navigation methods
   async navigateToSection(sectionId: string) {
