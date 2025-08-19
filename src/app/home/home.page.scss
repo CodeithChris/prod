@@ -5,6 +5,16 @@
   box-sizing: border-box;
 }
 
+// Global scrollbar hiding
+html, body, div, section, ion-content, .film-content {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+  
+  &::-webkit-scrollbar {
+    display: none !important;
+  }
+}
+
 // Hide scrollbar for webkit browsers
 ::-webkit-scrollbar {
   display: none;
@@ -18,6 +28,28 @@
 // Hide scrollbar for IE/Edge
 * {
   -ms-overflow-style: none;
+}
+
+// Specific scrollbar hiding for ion-content
+ion-content {
+  --overflow: hidden;
+  
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+// Hide scrollbar on body and html
+html, body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 ion-header {
@@ -176,6 +208,14 @@ ion-header {
   font-family: var(--font-primary);
   line-height: 1.6;
   background: var(--primary-color);
+  
+  // Hide scrollbar on the content
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 // Hero Section
