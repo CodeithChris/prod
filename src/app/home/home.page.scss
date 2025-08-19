@@ -5,6 +5,12 @@
   box-sizing: border-box;
 }
 
+ion-header {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
 // Variables
 :root {
   --primary-color: #000000;
@@ -35,6 +41,10 @@
     --background: transparent;
     --border-style: none;
     --min-height: 80px;
+    --padding-top: 0;
+    --padding-bottom: 0;
+    --padding-start: 0;
+    --padding-end: 0;
   }
 }
 
@@ -46,6 +56,7 @@
   max-width: 1400px;
   margin: 0 auto;
   height: 80px;
+  width: 100%;
 }
 
 .menu-toggle {
